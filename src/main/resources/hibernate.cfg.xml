@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Connection settings -->
+        <property name="connection.driver_class">org.h2.Driver</property>
+        <property name="connection.url">jdbc:h2:~/name</property>
+        <property name="connection.username">sa</property>
+        <property name="connection.password">sa</property>
+<!--        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>-->
+<!--        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/school</property>-->
+<!--        <property name="hibernate.connection.username">lion</property>-->
+<!--        <property name="hibernate.connection.password">password</property>-->
+
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+
+        <!--  Batch Size-->
+        <property name="hibernate.jdbc.batch_size">20</property>
+        <!-- Print executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+
+        <!-- Update database on startup -->
+        <property name="hibernate.hbm2ddl.auto">create-drop</property>
+
+
+        <mapping class="com.allisonkosy.entity.Course" />
+        <mapping class="com.allisonkosy.entity.CourseRegistration" />
+        <mapping class="com.allisonkosy.entity.Student" />
+        <mapping class="com.allisonkosy.entity.Teacher" />
+
+
+
+    </session-factory>
+</hibernate-configuration>
